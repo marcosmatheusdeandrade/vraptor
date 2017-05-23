@@ -1,0 +1,7 @@
+br\com\caelum\vraptor\controller\IndexController.class
+br\com\caelum\vraptor\teste\TesteSessao.class
+br\com\caelum\vraptor\interfaces\ICrud.class
+br\com\caelum\vraptor\teste\Mundo.class
+br\com\caelum\vraptor\entities\Produto.class
+br\com\caelum\vraptor\dao\DaoProduto.class
+br\com\caelum\vraptor\interfaces\Crud.class
