@@ -1,5 +1,7 @@
 package br.com.caelum.vraptor.interfaces;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -16,6 +18,10 @@ public abstract class Crud implements ICrud{
 	
 	public <T> T find(Class<T> entitie, Long id){
 		return getEntityManager().find(entitie, id);
+	}
+	
+	public <T> List<T> findAll(Class<T> entitie){
+		return getEntityManager().createNativeQuery("SELECT * FROM "+entitie.getSimpleName(), entitie).getResultList();
 	}
 	
 	public <T> T merge(T t){

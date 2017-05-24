@@ -1,6 +1,7 @@
 package br.com.caelum.vraptor.teste;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,6 +16,11 @@ public class TesteSessao {
 
 		try {
 
+			DaoProduto daoProduto = new DaoProduto();
+			List<Produto> findAll = daoProduto.findAll(Produto.class);
+			
+			
+			
 //			Produto find = new DaoProduto().find(Produto.class, 9l);
 			
 			new DaoProduto().remove(Produto.class, 9l);
