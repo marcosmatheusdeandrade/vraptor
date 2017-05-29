@@ -1,11 +1,16 @@
 package br.com.caelum.vraptor.interfaces;
 
+<<<<<<< HEAD
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
+=======
+>>>>>>> parent of 67684f6... testes
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+@RequestScoped
 public abstract class Crud implements ICrud{
 
 	private EntityManager getEntityManager(){
@@ -20,12 +25,13 @@ public abstract class Crud implements ICrud{
 		return getEntityManager().find(entitie, id);
 	}
 	
-	public <T> List<T> findAll(Class<T> entitie){
-		return getEntityManager().createNativeQuery("SELECT * FROM "+entitie.getSimpleName(), entitie).getResultList();
-	}
-	
 	public <T> T merge(T t){
-		return getEntityManager().merge(t);
+		EntityManager em = getEntityManager();
+		T objPersistido = em.merge(t);
+		
+		em.getTransaction().commit();
+		
+		return objPersistido;
 	}
 	
 	public <T> void remove(Class<T> entitie, Long id){

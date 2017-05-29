@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Produtos</title>
+<title>Listagem de produtos</title>
 </head>
 <body>
 
